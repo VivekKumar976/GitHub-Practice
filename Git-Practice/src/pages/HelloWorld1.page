@@ -1,0 +1,16 @@
+<apex:page sidebar="false"> 
+    <h1>Hello World</h1> 
+    <apex:pageBlock title="A Block Title" tabStyle="Case">
+        <style>
+           p { font-weight: bold; font-style: italic;color: #f50;}
+        </style>
+        
+    	<apex:pageBlockSection title="A Section Title"> 
+            <p> I'm three components deep!</p>
+        </apex:pageBlockSection>    
+    	<apex:pageBlockSection title="Another Section">
+            This is another section.
+        </apex:pageBlockSection>
+    
+    </apex:pageBlock>
+</apex:page>

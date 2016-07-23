@@ -1,0 +1,6 @@
+<apex:page >
+<apex:outputLink value="https://www.google.com" target="_self" title="www.google.com"  coords="left-2000">
+ <apex:image url="https://i.ytimg.com/vi/PAKCgvprpQ8/maxresdefault.jpg" height="200" width="200">
+ </apex:image>  
+</apex:outputLink> 
+</apex:page>

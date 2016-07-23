@@ -1,0 +1,12 @@
+<apex:page controller="picklistController">
+<apex:form >
+<apex:pageBlock >
+<apex:pageBlockSection title="Info" columns="2">
+
+  <apex:selectList value="{!profiles}" size="1" required="true">
+    <apex:selectOptions value="{!items}"/>
+  </apex:selectList>
+</apex:pageBlockSection>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

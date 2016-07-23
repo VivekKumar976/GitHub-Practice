@@ -1,0 +1,12 @@
+trigger beforeInsertonAccount on Account (before insert) {
+
+List<Expense__c> lstExp = new List<Expense__c>();
+Integer i =0;
+for(Account a : trigger.new)
+{
+    lstExp.add(new Expense__c(Name = 'Expense' + i.format()));
+}
+insert lstExp;
+
+
+}

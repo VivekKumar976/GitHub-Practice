@@ -1,0 +1,10 @@
+<apex:page standardcontroller="Case" extensions="exampleCon1">
+    <apex:form >
+        <apex:outputText value="Watch this counter:  
+        {!count}" id="counter"/>
+        <apex:actionStatus startText=" (incrementing...)"
+            stopText=" (complete)" id="counterStatus"/>
+        <apex:actionPoller action="{!incrementCounter}" rerender="counter"
+             status="counterStatus" interval="5"/>
+    </apex:form>
+</apex:page>

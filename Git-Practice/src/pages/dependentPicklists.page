@@ -1,0 +1,10 @@
+<apex:page standardController="Opportunity">
+<apex:form >
+<apex:pageBlock >
+<apex:pageBlockSection >
+<apex:inputField value="{!Opportunity.DeliveryInstallationStatus__c}" id="columnA" /><br/>
+<apex:inputField id="columnB" value="{!Opportunity.ColumnB__c}"/>
+</apex:pageBlockSection>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

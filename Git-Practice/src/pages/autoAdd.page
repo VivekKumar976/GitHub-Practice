@@ -1,0 +1,44 @@
+<apex:page controller="exampleCon">
+    
+<apex:form >
+<apex:pageBlock >
+<apex:outputPanel >Please enter number of rows to display:
+<apex:inputText value="{!noOfRows}" /> 
+<apex:actionSupport event="onmouseout" action="{!doAddition}" rerender="counter,sum" status="counterStatus"/>
+<apex:outputText value="{!noOfRows}"  id="counter"/>     
+ 
+<br/><br/>
+<apex:actionStatus id="counterStatus" startText=" (Calculating...)" />
+</apex:outputPanel>
+
+<apex:pageBlockSection id="panel1">
+<apex:pageBlockTable value="{!prepareData}"  var="a" >
+<apex:column > <apex:inputText value="{!a.firstNumber}"/> 
+</apex:column>
+<apex:column ><apex:outputText >&nbsp;+&nbsp;</apex:outputText></apex:column>
+<apex:column > <apex:inputText value="{!a.secNumber}"/>
+<apex:actionSupport event="onmouseout" action="{!a.add}" rerender="sum" />
+</apex:column>
+<apex:column ><apex:outputText >&nbsp;=&nbsp;</apex:outputText></apex:column>
+<apex:column > <apex:outputPanel id="sum">{!a.rowSum}</apex:outputPanel>  </apex:column>
+</apex:pageBlockTable>
+
+</apex:pageBlockSection>
+
+
+<apex:pageBlockSection id="section2"  >
+<apex:selectList value="{!option}" size="1" label="Customer Priority" >
+
+<apex:selectOptions value="{!PicklistValues}" />
+<apex:actionSupport event="onchange" action="{!showFields}" rerender="section1"/>
+</apex:selectList>
+</apex:pageBlockSection>
+<apex:pageBlockSection id="section1"  >
+<apex:inputText value="{!userName}"  label="Username" rendered="{!nameFlag}"/>
+<apex:inputSecret value="{!pwd}"  label="Password" rendered="{!pwdFlag}"/>
+</apex:pageBlockSection>
+
+
+</apex:pageBlock>    
+</apex:form>
+</apex:page>

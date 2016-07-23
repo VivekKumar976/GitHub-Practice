@@ -1,0 +1,15 @@
+<apex:page sidebar="false" showHeader="true" standardController="Account">
+  <b>Hello {!$User.FirstName}!</b>
+  <p>You are viewing account:{!account.name} account</p>
+  <p>You may call them at {!account.phone}</p>
+  <apex:detail relatedList="false" />
+  <apex:relatedList list="cases"/>
+  <apex:pageBlock title="Custom Block"> 
+      <apex:pageBlockSection title="Custom Section Title">
+          <apex:outputField value="{!account.accountnumber}"/>
+          <apex:outputField value="{!account.rating}"/>
+      
+      </apex:pageBlockSection>
+  
+  </apex:pageBlock>
+</apex:page>
